@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: theFont;
+}
+
+@font-face {
+  font-family: theFont;
+  src: url(assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(65, 1, 1);
+}
+
+:root {
+  --primary-color: #410101;
+  --secondary-color: #ff2020;
+  --tertiary-color: #ffffff;
+}
+
+.container {
+  position: relative;
+  width: 46rem;
+  height: 28rem;
+  background: transparent;
+  border-radius: 1rem;
+  border: 0.13rem solid var(--secondary-color);
+  box-shadow: 0 0 1.5rem var(--secondary-color);
+  overflow: hidden;
+}
+
+.container .form-field {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.container .form-field.login {
+  left: 0;
+  padding: 0 2.5rem 0 1.5rem;
+  /* display: none; */
+}
+
+.container .form-field.login .animate {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.container.active .form-field.login .animate {
+  transform: translateX(-120%);
+  opacity: 0;
+  filter: blur(0.5rem);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.container .form-field.register {
+  right: 0;
+  padding: 0 1.5rem 0 2.5rem;
+  /* display: none; */
+  pointer-events: none;
+}
+
+.container.active .form-field.register {
+  pointer-events: auto;
+}
+
+.container .form-field.register .animate {
+  transform: translateX(120%);
+  opacity: 0;
+  filter: blur(0.5rem);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.container.active .form-field.register .animate {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.form-field h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--tertiary-color);
+}
+
+.form-field .input-field {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  margin: 1.5rem 0;
+}
+
+.input-field input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-right: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--tertiary-color);
+  background: transparent;
+  border-bottom: 0.13rem solid var(--tertiary-color);
+  transition: 0.5s;
+}
+
+.input-field input:focus,
+.input-field input:valid {
+  border-bottom-color: var(--secondary-color);
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--tertiary-color);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  top: -0.13rem;
+  color: var(--secondary-color);
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-field input:focus ~ i,
+.input-field input:valid ~ i {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+}
+
+.forget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--tertiary-color);
+}
+
+#remember {
+  accent-color: var(--secondary-color);
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 0.5rem;
+}
+
+.forget a {
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.forget a:hover {
+  text-decoration: underline;
+}
+
+button {
+  position: relative;
+  width: 100%;
+  height: 2.8rem;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--tertiary-color);
+  background: transparent;
+  border: 0.13rem solid var(--secondary-color);
+  border-radius: 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 100;
+}
+
+button::before {
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  content: "";
+  top: -100%;
+  left: 0;
+  background: linear-gradient(
+    rgb(65, 1, 1),
+    rgb(255, 32, 32),
+    rgb(65, 1, 1),
+    rgb(255, 32, 32)
+  );
+  transition: 0.5s;
+  z-index: -100;
+}
+
+button:hover::before {
+  top: 0;
+}
+
+.logreg-link {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1rem;
+  color: var(--tertiary-color);
+  text-align: center;
+}
+
+.logreg-link p a {
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.logreg-link p a:hover {
+  text-decoration: underline;
+}
+
+.container .info-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.container .info-text.login {
+  right: 0;
+  text-align: right;
+  padding: 0 2.5rem 3.75rem 9.375rem;
+  /* display: none; */
+}
+
+.container .info-text.login .animate {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.container.active .info-text.login .animate {
+  transform: translateX(120%);
+  opacity: 0;
+  filter: blur(0.5rem);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.container .info-text.register {
+  left: -10;
+  text-align: left;
+  padding: 0 9.375rem 3.75rem 2.5rem;
+  /* display: none; */
+  pointer-events: none;
+}
+
+.container.active .info-text.register {
+  pointer-events: auto;
+}
+
+.container .info-text.register .animate {
+  transform: translateX(-120%);
+  opacity: 0;
+  filter: blur(0.5rem);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--j));
+}
+
+.container.active .info-text.register .animate {
+  transform: translateX(0%);
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.info-text h2 {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--tertiary-color);
+  text-transform: uppercase;
+}
+
+.info-text p {
+  font-size: 1rem;
+  color: var(--tertiary-color);
+}
+
+.container .animation1 {
+  position: absolute;
+  width: 850px;
+  height: 600px;
+  top: -4px;
+  right: 0;
+  background: linear-gradient(45deg, rgb(65, 1, 1), rgb(255, 32, 32));
+  border-bottom: 5px solid var(--secondary-color);
+  transform: rotate(10deg) skewY(40deg);
+  transform-origin: bottom right;
+  transition: 1.5s ease;
+  transition-delay: 1.2s;
+}
+
+.container.active .animation1 {
+  transform: rotate(0) skewY(0);
+  transition-delay: 0.5s;
+}
+
+.container .animation2 {
+  position: absolute;
+  width: 850px;
+  height: 700px;
+  top: 100%;
+  left: 250px;
+  background: var(--primary-color);
+  border-top: 5px solid var(--secondary-color);
+  transform: rotate(0) skewY(0);
+  transform-origin: bottom left;
+  transition: 1.5s ease;
+  transition-delay: 0.5s;
+}
+
+.container.active .animation2 {
+  transform: rotate(-13deg) skewY(-38deg);
+  transition-delay: 1.2s;
+}

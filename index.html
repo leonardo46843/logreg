@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Transition -->
+      <span class="animation1"></span>
+      <span class="animation2"></span>
+
+      <!-- Login -->
+      <div class="form-field login">
+        <h2 class="animate" style="--i: 0; --j: 17">LOGIN</h2>
+        <form action="#">
+          <div class="input-field animate" style="--i: 1; --j: 18">
+            <input type="text" required />
+            <label for="#">Username</label>
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="input-field animate" style="--i: 2; --j: 19">
+            <input type="password" required />
+            <label for="#">Password</label>
+            <i class="bx bx-lock"></i>
+            <i class="bx bx-lock-open"></i>
+          </div>
+          <div class="forget animate" style="--i: 3; --j: 20">
+            <label for="remember">
+              <input type="checkbox" name="" id="remember" />
+              <p>Remember Me</p>
+            </label>
+            <a href="#">Forgot Password.?</a>
+          </div>
+          <button type="submit" class="animate" style="--i: 4; --j: 21">
+            Sign In
+          </button>
+          <div class="logreg-link animate" style="--i: 5; --j: 22">
+            <p>
+              Don't have account, yet.?<br /><a href="#" class="reg-link"
+                >Sign Up</a
+              >, right NOW for FREE!!
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Massage -->
+      <div class="info-text login">
+        <h2 class="animate" style="--i: 3; --j: 19">welcome back!</h2>
+        <p class="animate" style="--i: 4; --j: 20">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+      </div>
+
+      <!-- Register -->
+      <div class="form-field register">
+        <h2 class="animate" style="--i: 17; --j: 0">REGISTER</h2>
+        <form action="#">
+          <div class="input-field animate" style="--i: 18; --j: 1">
+            <input type="text" required />
+            <label for="#">Username</label>
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="input-field animate" style="--i: 19; --j: 2">
+            <input type="text" required />
+            <label for="#">Email</label>
+            <i class="bx bx-envelope"></i>
+          </div>
+          <div class="input-field animate" style="--i: 20; --j: 3">
+            <input type="password" required />
+            <label for="#">Password</label>
+            <i class="bx bx-lock"></i>
+            <i class="bx bx-lock-open"></i>
+          </div>
+          <button type="submit" class="animate" style="--i: 21; --j: 4">
+            Sign Up
+          </button>
+          <div class="logreg-link animate" style="--i: 22; --j: 5">
+            <p>
+              Already have an account.?<br />Then
+              <a href="#" class="log-link">Sign in</a> here!
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Massage -->
+      <div class="info-text register">
+        <h2 class="animate" style="--i: 19; --j: 3">join us now!</h2>
+        <p class="animate" style="--i: 20; --j: 4">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
